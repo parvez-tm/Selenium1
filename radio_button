@@ -1,0 +1,25 @@
+public static void main(String[] args) {
+		System.setProperty("webdriver.gecko.driver",
+				"/home/parveztm/Documents/geckodriver");
+				WebDriver driver = new FirefoxDriver();
+				driver.manage().window().maximize();
+				
+		
+		driver.get("file:///home/parveztm/Desktop/index.html");
+		
+		WebElement text = driver.findElement(By.xpath("//td[.='Row 1, Column 1']"));
+		
+		
+		System.out.println(text);
+		
+		List<WebElement> rows = driver.findElements(By.xpath("//table/tbody/tr"));
+		 System.out.println("Total Rows"+rows.size());
+		 List <WebElement> column= driver.findElements(By.xpath("/html/body/table/tbody/tr[1]"));
+		 System.out.println("Total Columns"+column.size());
+		
+		for(WebElement row: rows)
+		 {
+			System.out.println(row.getText()); 
+		 }
+		
+	}

@@ -1,0 +1,11 @@
+public static void main(String[] args) {
+		System.setProperty("webdriver.gecko.driver",
+				"/home/parveztm/Documents/geckodriver");
+				WebDriver driver = new FirefoxDriver();
+				driver.manage().window().maximize();
+				driver.get("https:\\www.facebook.com");
+				WebElement image = driver.findElement(By.xpath("//img[@alt='Facebook']"));
+				System.out.println("Src attribute Value: " + image.getAttribute("src"));
+				driver.quit();
+
+	}
